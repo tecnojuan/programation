@@ -1,0 +1,217 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TecnoJuan.web</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="FOTOS/T DE TECNOJUAN.jpg">
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<!-- CHATBOT -->
+<div id="chatbot-btn">🤖</div>
+
+<div id="chatbot">
+  <div id="chat-header">
+    TecnoBot 🤖
+    <span id="close-chat">✖</span>
+  </div>
+  <div id="chat-body"></div>
+  <div id="chat-footer">
+    <input type="text" id="chat-input" placeholder="Escribe aquí...">
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+</div>
+
+<script>
+  const chatBtn = document.getElementById("chatbot-btn");
+  const chatbot = document.getElementById("chatbot");
+  const closeChat = document.getElementById("close-chat");
+  const chatBody = document.getElementById("chat-body");
+  const chatInput = document.getElementById("chat-input");
+
+  chatBtn.onclick = () => chatbot.style.display = "flex";
+  closeChat.onclick = () => chatbot.style.display = "none";
+
+  function sendMessage() {
+    const msg = chatInput.value.trim();
+    if (msg === "") return;
+
+    addMessage("Tú", msg);
+    chatInput.value = "";
+
+    setTimeout(() => {
+      addMessage("TecnoBot", botResponse(msg));
+    }, 500);
+  }
+
+  function addMessage(sender, text) {
+    chatBody.innerHTML += `<p><strong>${sender}:</strong> ${text}</p>`;
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+  chatInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") sendMessage();
+});
+
+  function botResponse(msg) {
+    msg = msg.toLowerCase();
+
+    if (msg.includes("hola")) return "¡Hola! Bienvenido a TecnoJuan.web 😄";
+    if (msg.includes("html")) return "HTML sirve para estructurar páginas web.";
+    if (msg.includes("css")) return "CSS da estilo a tus páginas 🎨";
+    if (msg.includes("javascript")) return "JavaScript da vida a tu web 🚀";
+    if (msg.includes("videos")) return "Puedes ver los videos en la sección principal 🎥";
+    if (msg.includes("que es programar")) return "Es decirle a la computadora qué hacer.";
+    if (msg.includes("la computadora me entiende")) return "Sí, si le hablas con el lenguaje correcto.";
+    if (msg.includes("que es un programa")) return "Es como una receta que le dice a la computadora qué hacer.";
+    if (msg.includes("como entiende la computadora")) return "Solo entiende instrucciones muy precisas, como un robot 🤖";
+    if (msg.includes("que hago")) return "Ve a ver los videos de abajo 👇";
+    if (msg.includes("hacer")) return "puedes aprender mirando los videos";
+    if (msg.includes("me ayudas")) return "¡Claro! ¿En qué te ayudo?";
+    if (msg.includes("cual veo primero")) return "Observa el primer video de arriba.";
+    if (msg.includes("como se hizo el sitio web")) return "Con HTML para la estructura, CSS para el estilo y JavaScript para la lógica.";
+    if (msg.includes("puedo hacer mi propio sitio web")) return "¡Claro que sí! Solo necesitas aprender a programar 💻";
+    if (msg.includes("donde puedo programar")) return "Puedes usar Bloc de notas o editores como VS Code.";
+    if (msg.includes("como pongo videos")) return "Usa la etiqueta <video> en HTML.";
+    if (msg.includes("ok")) return "bien, estoy para ayudarte";
+    if (msg.includes("gracias")) return "bien, estoy para ayudarte";
+    if (msg.includes("ya mire los videos")) return "perfecto si tienes alguna duda puedes enviarnos un correo a tecnobarca2015@gmail.com";
+
+    
+
+    // 👉 Respuesta por defecto
+    return "No entendí eso 🤔 ¿Puedes escribirlo de otra forma?";
+  }
+</script>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="FOTOS/T DE TECNOJUAN.jpg" alt="Logotipo TecnoJuan" width="80">
+      <h1>TecnoJuan.web</h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a href="#tutoriales"><i class="fa-solid fa-code"></i> Tutorial</a></li>
+        <li><a href="#videos"><i class="fa-solid fa-video"></i> Videos</a></li>
+        <li><a href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN: VIDEOS -->
+    <section id="videos" class="content-section">
+      <h2>🎥 Aprende en video</h2>
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/qHAilBtZ3nE"
+        title="Introducción a la programación"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="inicio">
+    <div class="overlay">
+      <h2>💻 Dale vida a tus ideas con programación</h2>
+      <p>Convierte tu creatividad en proyectos reales a través del código.</p>
+      <a href="#tutoriales" class="btn">Comienza ahora</a>
+    </div>
+  </section>
+
+
+      
+
+ <!-- SECCIÓN: TUTORIALES -->
+  <main>
+    <section id="tutoriales" class="content-section">
+      <h2>🧠 Aprende paso a paso</h2>
+      <p>Descubre cómo dar tus primeros pasos en el mundo de la programación.</p>
+      <h1>¿Qu&eacute; son los c&oacute;digos?</h1>
+      <h2>Aqu&iacute; ten&eacute;s un video :D</h2>
+      <video controls width="800">
+      <source src="FOTOS/presentacioncode.mp4" type="video/mp4">
+      </video>
+
+
+          
+
+<h2>Primer paso: Necesitamos un editor de c&oacute;digo</h2>
+<p>Necesitamos un editor como <strong>Sublime Text</strong>, <strong>VS Code</strong> o incluso el Bloc de notas.</p>
+        <figure>
+          <img src="FOTOS/logo de sublime.PNG" alt="Sublime Text">
+
+<p>Instalemos sublime text</p>
+      <video controls width="800" src="FOTOS/INSTALACION SUBLIME.mp4" type="video/mp4"></video>
+      
+     
+
+
+      <!-- SEGUNDO PASO -->
+      <article class="card">
+        <h2>Segundo paso: Utilicemos nuestro editor de c&oacute;digo</h2>
+        
+        <video controls width="800">
+          <source src="FOTOS/crear un doc. html.mp4" type="video/mp4">
+        </video>
+      </article>
+
+      <!-- SEGUNDO PASO -->
+
+      <article class="card">
+        <h3>prende HTML</h3>
+        <p>HTML es el lenguaje base para estructurar páginas web. Aquí aprenderás su esqueleto básico.</p>
+        <figure>
+          <img src="FOTOS/Estructura html.PNG" alt="Estructura HTML básica">
+          <figcaption>Estructura principal de un documento HTML.</figcaption>
+        </figure>
+        <video controls width="800">
+          <source src="FOTOS/Multimedia2.mp4" type="video/mp4">
+        </video>
+      </article>
+
+      <!-- TERCER PASO -->
+      <article class="card">
+        <h3>Tercer paso: títulos y subtítulos</h3>
+        <p>Las etiquetas <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> representan jerarquías de texto, desde el título más grande al más pequeño.</p>
+        <video controls width="800">
+          <source src="FOTOS/Presentación1.mp4" type="video/mp4">
+        </video>
+      </article>
+
+      <!-- CUARTO PASO -->
+      <article class="card">
+        <h3>Cuarto paso: insertar imágenes</h3>
+        <p>Aprende a usar la etiqueta <code>&lt;img&gt;</code> para dar estilo y orientación a tu sitio web.</p>
+        <video controls width="800">
+          <source src="FOTOS/Presentación2.mp4" type="video/mp4">
+        </video>
+      </article>
+    </section>
+
+
+  <!-- FOOTER -->
+  <footer id="contacto">
+    <p>&copy; 2025 Doctor Juan José Franco Burgos — TecnoJuan.web</p>
+    <div class="social">
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </footer>
+  <script>
+    
+    var nombre;
+   nombre = prompt("ingresa tu nombre");
+    edad = prompt("ingresa la edad");
+    document.write(edad + nombre);
+
+  </script>
+
+</body>
+</html>
